@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP TocJS\n"
+"POT-Creation-Date: 2018-03-28 10:34+0900\n"
+"PO-Revision-Date: 2018-03-28 10:34+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wp-tocjs.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: wp-tocjs.php:68
+msgid "Contents"
+msgstr "目次"
+
+#. Plugin Name of the plugin/theme
+#: wp-tocjs.php:90 wp-tocjs.php:91
+msgid "WP TocJS"
+msgstr ""
+
+#: wp-tocjs.php:117
+msgid "Display table of contents with shortcode"
+msgstr "ショートコードで目次を表示する"
+
+#: wp-tocjs.php:119
+msgid ""
+"The TOC is automatically displayed at the position of the more tag, but you "
+"can also display the TOC at the desired position with the shortcode."
+msgstr ""
+"目次はmoreタグの位置に自動的に表示されますが、ショートコードで好きな位置に目"
+"次を表示することもできます。"
+
+#: wp-tocjs.php:120
+msgid "Shortcode"
+msgstr "ショートコード"
+
+#: wp-tocjs.php:132
+msgid "Source element"
+msgstr "目次対象を含む要素"
+
+#: wp-tocjs.php:140
+msgid "Target headings"
+msgstr "対象とする見出し要素"
+
+#: wp-tocjs.php:148
+msgid "Minimum"
+msgstr "最小数"
+
+#: wp-tocjs.php:156
+msgid "TOC Title"
+msgstr "目次のタイトル"
+
+#: wp-tocjs.php:164
+msgid "TOC Title tag element"
+msgstr "目次のタイトルの要素"
+
+#: wp-tocjs.php:172
+msgid "Excluldes classname"
+msgstr "除外するクラス"
+
+#: wp-tocjs.php:182
+msgid "Display number in heading"
+msgstr "見出しに番号を表示"
+
+#: wp-tocjs.php:190
+msgid "Display number in TOC"
+msgstr "目次に番号を表示"
+
+#: wp-tocjs.php:198
+msgid "Do not use plugin's CSS"
+msgstr "プラグインのCSSを使わない"
+
+#: wp-tocjs.php:206
+msgid "Do not use plugin's JS"
+msgstr "プラグインのJavaScriptを使わない"
+
+#: wp-tocjs.php:221
+msgid "As the TOC function becomes invalid, please do not usually disable it."
+msgstr "目次機能が無効になります。通常は無効にしないでください。"
+
+#: wp-tocjs.php:227
+msgid ""
+"The contents of the element specified here becomes the target area of the "
+"TOC."
+msgstr "ここで指定した要素内が目次の対象エリアとなります。"
+
+#: wp-tocjs.php:228
+msgid "In the format of a jQuery selector."
+msgstr "jQuery(CSS）セレクタの形式で入力ください。"
+
+#: wp-tocjs.php:234
+msgid "Please enter the target headings in h1 - h6 separated by comma."
+msgstr "目次の対象とする見出しタグをh1-h6でカンマ区切りで入力してください"
+
+#: wp-tocjs.php:240
+msgid ""
+"If the number of target headings is less than or equal to the value, the TOC "
+"is not displayed."
+msgstr "目次の対象となる見出しがこの数以下の場合、目次を表示しません。"
+
+#: wp-tocjs.php:257
+msgid "Please input as attribute name of class, not selector."
+msgstr "セレクタではなく、クラス名を入力してください。"
+
+#: wp-tocjs.php:303
+msgid "Hidden on this page"
+msgstr "このページの目次を表示しない"
+
+#. Plugin URI of the plugin/theme
+msgid "http://e-joint.jp/works/wp-tocjs/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A WordPress plugin that makes Table of Contents automatically."
+msgstr "記事の目次を自動生成するWordPressプラグインです。"
+
+#. Author of the plugin/theme
+msgid "e-JOINT.jp"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://e-joint.jp"
+msgstr ""
+
+#~ msgid "Display table of contents with short code"
+#~ msgstr "ショートコードで目次を表示する"
+
+#~ msgid "Includes classname"
+#~ msgstr "追加するクラス"
+
+#~ msgid ""
+#~ "If the number of target headings is less than or equal to the value, the "
+#~ "table of contents is not displayed."
+#~ msgstr "目次の対象となる見出しがこの数以下の場合、"
+
+#~ msgid "How to Use"
+#~ msgstr "使い方"
