@@ -51,7 +51,7 @@ gulp.task('copy', function () {
   // const csssrc = path.join(ProjectRoot, 'node_modules', 'tocjs', 'dist', '**', '*.css')
   const jssrc = path.join(ProjectRoot, 'node_modules', 'tocjs', 'dist', '**', '*.js')
   // const cssdist = path.join(dir.rel.dist, dir.assets, dir.css)
-  const jsdist = path.join(dir.rel.dist, dir.assets, dir.js)
+  const jsdist = path.join(dir.rel.dist, dir.assets)
 
   // gulp.src(csssrc)
   //   .pipe(gulp.dest(cssdist))
