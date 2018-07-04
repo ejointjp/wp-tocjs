@@ -4,7 +4,7 @@ Donate link:
 Tags: shortcode, quote, quotation, blockquote
 Requires at least: 4.0
 Tested up to: 4.9.6
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,10 @@ An answer to that question.
 
 == Changelog ==
 
+= 0.3.1 =
+
+* Bug fix.
+
 = 0.3.0 =
 
 * Changed the id for the in-page link from the heading tag to the previous span.
@@ -68,3 +72,6 @@ An answer to that question.
 * Initial release.
 
 == Upgrade notice ==
+
+= 0.3.1 =
+* There is a bug in JavaScript and TOC can not be displayed. Please update it promptly.

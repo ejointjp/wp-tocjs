@@ -3,7 +3,7 @@
 Plugin Name: WP TocJS
 Plugin URI: http://e-joint.jp/works/wp-tocjs/
 Description: A WordPress plugin that makes Table of Contents automatically.
-Version: 0.3.0
+Version: 0.3.1
 Author: e-JOINT.jp
 Author URI: http://e-joint.jp
 Text Domain: wp-tocjs
