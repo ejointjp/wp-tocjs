@@ -282,9 +282,9 @@ class Wp_Tocjs {
   public function add_scripts() {
     if(!isset($this->options['nojs']) || !$this->options['nojs']) {
       if(!$this->options['nojs']) {
-        wp_enqueue_script('wptjs', plugins_url('assets/js/tocjs.min.js', __FILE__), array('jquery'), $this->version, true);
+        wp_enqueue_script('wptjs', plugins_url('assets/js/toc.js', __FILE__), array('jquery'), $this->version, true);
       } else {
-        wp_enqueue_script('wptjs', plugins_url('assets/js/tocjs.min.js', __FILE__), array('jquery'), $this->version, true);
+        wp_enqueue_script('wptjs', plugins_url('assets/js/toc.js', __FILE__), array('jquery'), $this->version, true);
       }
     }
   }
