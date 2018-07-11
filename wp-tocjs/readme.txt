@@ -3,8 +3,8 @@ Contributors: ejointjp
 Donate link:
 Tags: shortcode, quote, quotation, blockquote
 Requires at least: 4.0
-Tested up to: 4.9.6
-Stable tag: 0.3.1
+Tested up to: 4.9.7
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,11 @@ An answer to that question.
 1. Quotation sample.
 
 == Changelog ==
+
+= 0.4.0 =
+
+* Update: Supported Custom Post Types.
+* カスタム投稿タイプに対応しました。
 
 = 0.3.1 =
 

@@ -3,7 +3,7 @@
 Plugin Name: WP TocJS
 Plugin URI: http://e-joint.jp/works/wp-tocjs/
 Description: A WordPress plugin that makes Table of Contents automatically.
-Version: 0.3.1
+Version: 0.4.0
 Author: e-JOINT.jp
 Author URI: http://e-joint.jp
 Text Domain: wp-tocjs
@@ -194,6 +194,14 @@ class Wp_Tocjs {
     );
 
     add_settings_field(
+      'disable_post_type',
+      __('Post type to disable TOC', $this->textdomain),
+      array($this, 'disable_post_type_callback'),
+      'wptjs-setting',
+      'wptjs-setting-section-id'
+    );
+
+    add_settings_field(
       'nocss',
       __('Do not use plugin\'s CSS', $this->textdomain),
       array($this, 'nocss_callback'),
@@ -267,6 +275,29 @@ class Wp_Tocjs {
     ?><input type="checkbox" id="toc-number" name="wptjs-setting[toc_number]" value="1"<?php echo $checked; ?>><?php
   }
 
+  public function disable_post_type_callback() {
+    $post_types = $this->post_types();
+    $data = $this->options['disable_post_type'];
+    $html = '';
+    $html .= '<fieldset>';
+
+    foreach($post_types as $post_type) {
+      $name = $post_type->name;
+
+      if(is_array($data)) {
+        $checked = in_array($name, $data) ? ' checked="checked"' : '';
+      } else {
+        $checked = '';
+      }
+
+      $html .= sprintf('<label><input type="checkbox" name="wptjs-setting[disable_post_type][]" value="%s"%s> %s</label><br>', $name, $checked, $post_type->label);
+    }
+
+    $html .= '</fieldset>';
+
+    echo $html;
+  }
+
   // スタイルシートの追加
   public function add_styles() {
     if(!isset($this->options['nocss']) || !$this->options['nocss']) {
@@ -291,8 +322,22 @@ class Wp_Tocjs {
 
   // カスタムフィールドの追加
   public function add_custom_field() {
-    add_meta_box('wptjs-setting', 'WP TocJS', array($this, 'custom_field_metabox'), 'post', 'side');
-    add_meta_box('wptjs-setting', 'WP TocJS', array($this, 'custom_field_metabox'), 'page', 'side');
+    $post_types = $this->post_types();
+    $disable_post_type = $this->options['disable_post_type'];
+
+    if(is_null($disable_post_type)) {
+      foreach($post_types as $post_type) {
+        add_meta_box('wptjs-setting', 'WP TocJS', array($this, 'custom_field_metabox'), $post_type->name, 'side');
+      }
+    } else {
+      foreach($post_types as $post_type) {
+        if(!in_array($post_type->name, $disable_post_type)) {
+          add_meta_box('wptjs-setting', 'WP TocJS', array($this, 'custom_field_metabox'), $post_type->name, 'side');
+        }
+      }
+    }
+    // add_meta_box('wptjs-setting', 'WP TocJS', array($this, 'custom_field_metabox'), 'post', 'side');
+    // add_meta_box('wptjs-setting', 'WP TocJS', array($this, 'custom_field_metabox'), 'page', 'side');
   }
 
   // カスタムフィールドの中身
@@ -320,7 +365,12 @@ class Wp_Tocjs {
     }
   }
 
-  public function generate_scripts() { ?>
+  public function generate_scripts() {
+
+    if($this->is_disabled()) {
+      return;
+    }
+    ?>
     <script>
     jQuery("<?php echo $this->default_option('src') ?>").tocjs({
       excludes: "<?php echo $this->default_option('excludes'); ?>",
@@ -335,7 +385,35 @@ class Wp_Tocjs {
     </script>
   <?php }
 
-  function the_content($content) {
+  protected function post_types() {
+    $post_types = get_post_types('', 'objects');
+    $unsets = ['attachment', 'revision', 'nav_menu_item', 'custom_css', 'customize_changeset', 'oembed_cache', 'user_request'];
+
+    foreach($unsets as $unset) {
+      unset($post_types[$unset]);
+    }
+
+    return $post_types;
+  }
+
+  protected function is_disabled() {
+    $disable_post_type = $this->options['disable_post_type'];
+    $post_type = get_post_type();
+
+    if(is_null($disable_post_type)) {
+      $disabled = false;
+
+    } else {
+      $disabled = in_array($post_type, $disable_post_type);
+    }
+
+    return $disabled;
+  }
+
+  public function the_content($content) {
+    if($this->is_disabled()) {
+      return $content;
+    }
 
     $add_html = do_shortcode('[tocjs]');
     $id = get_the_ID();
