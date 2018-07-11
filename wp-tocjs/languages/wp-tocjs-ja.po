@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP TocJS\n"
-"POT-Creation-Date: 2018-03-28 10:34+0900\n"
-"PO-Revision-Date: 2018-03-28 10:34+0900\n"
+"POT-Creation-Date: 2018-07-11 15:13+0900\n"
+"PO-Revision-Date: 2018-07-11 15:13+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -78,42 +78,46 @@ msgid "Display number in TOC"
 msgstr "目次に番号を表示"
 
 #: wp-tocjs.php:198
+msgid "Post type to disable TOC"
+msgstr "目次を無効にする投稿タイプ"
+
+#: wp-tocjs.php:206
 msgid "Do not use plugin's CSS"
 msgstr "プラグインのCSSを使わない"
 
-#: wp-tocjs.php:206
+#: wp-tocjs.php:214
 msgid "Do not use plugin's JS"
 msgstr "プラグインのJavaScriptを使わない"
 
-#: wp-tocjs.php:221
+#: wp-tocjs.php:229
 msgid "As the TOC function becomes invalid, please do not usually disable it."
 msgstr "目次機能が無効になります。通常は無効にしないでください。"
 
-#: wp-tocjs.php:227
+#: wp-tocjs.php:235
 msgid ""
 "The contents of the element specified here becomes the target area of the "
 "TOC."
 msgstr "ここで指定した要素内が目次の対象エリアとなります。"
 
-#: wp-tocjs.php:228
+#: wp-tocjs.php:236
 msgid "In the format of a jQuery selector."
 msgstr "jQuery(CSS）セレクタの形式で入力ください。"
 
-#: wp-tocjs.php:234
+#: wp-tocjs.php:242
 msgid "Please enter the target headings in h1 - h6 separated by comma."
 msgstr "目次の対象とする見出しタグをh1-h6でカンマ区切りで入力してください"
 
-#: wp-tocjs.php:240
+#: wp-tocjs.php:248
 msgid ""
 "If the number of target headings is less than or equal to the value, the TOC "
 "is not displayed."
 msgstr "目次の対象となる見出しがこの数以下の場合、目次を表示しません。"
 
-#: wp-tocjs.php:257
+#: wp-tocjs.php:265
 msgid "Please input as attribute name of class, not selector."
 msgstr "セレクタではなく、クラス名を入力してください。"
 
-#: wp-tocjs.php:303
+#: wp-tocjs.php:348
 msgid "Hidden on this page"
 msgstr "このページの目次を表示しない"
 
